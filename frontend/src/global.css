@@ -59,6 +59,8 @@ main {
   align-items: center;
   justify-content: center;
   width: 100%;
+  overflow: auto;
+  margin-top: 6rem;
 }
 
 @media (max-width: 768px) {

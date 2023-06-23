@@ -1,10 +1,11 @@
 aside {
-  width: 10rem;
+  width: 100%;
+  min-width: 10rem;
   height: 100%;
+  min-height: 20rem;
   background-color: #f0f0f0;
   border-right: 1px solid #eaeaea;
   box-sizing: border-box;
-  padding: 20px;
   margin: 8px;
   display: flex;
   flex-direction: column;

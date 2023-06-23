@@ -8,8 +8,8 @@ header {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: 8px 0;
-  }
+  position: fixed;
+}
 
 header .header-content {
   width: 100%;

@@ -1,5 +1,7 @@
 import { Clock } from "@/components/clock";
 import "./index.css";
+import { Developer } from "@/config/developer";
+import { NavigationMenu } from "../navigation-menu";
 
 export const Header = () => {
   return (
@@ -8,6 +10,7 @@ export const Header = () => {
         <p>Header</p>
         <Clock />
       </div>
+      <NavigationMenu name={Developer.name} />
     </header>
   );
 };

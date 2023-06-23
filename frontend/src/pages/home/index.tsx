@@ -3,8 +3,9 @@ import { Footer } from "@/components/common/footer";
 import { Header } from "@/components/common/header";
 import { MainContent } from "@/components/common/main-content";
 import { NavigationMenu } from "@/components/common/navigation-menu";
+import { ImageSlider } from "@/components/image-slider";
 import { Developer } from "@/config/developer";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 interface ITodo {
   id: number;
@@ -15,6 +16,7 @@ interface ITodo {
 
 const Home = () => {
   const [todos, setTodos] = useState<ITodo[]>([]);
+  const [images, setImages] = useState<string[]>([]);
 
   const fetchItems = async () => {
     const response = await fetch(
@@ -25,12 +27,25 @@ const Home = () => {
     setTodos(data);
   };
 
+  const fetchImages = async () => {
+    const response = await fetch(
+      "https://jsonplaceholder.typicode.com/photos?_limit=10"
+    );
+    const data = await response.json();
+    setImages(data.map((item: any) => item.url));
+  };
+
+  useEffect(() => {
+    fetchImages();
+  }, []);
+
   return (
     <>
       <Header />
-      <NavigationMenu name={Developer.name} />
       <main>
-        <Content />
+        <Content>
+          #TODO 
+        </Content>
         <MainContent
           description={Developer.projectDescription}
           onReadMoreClick={fetchItems}
@@ -42,7 +57,14 @@ const Home = () => {
             </div>
           ))}
         </MainContent>
-        <Content />
+        <Content>
+          <ImageSlider
+            images={images}
+            autoPlay={false}
+            showArrows
+            showFooterNavigation
+          />
+        </Content>
       </main>
       <Footer />
     </>

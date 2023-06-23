@@ -1,9 +1,9 @@
-import './index.css'
+import "./index.css";
 
-export const Content = () => {
-  return (
-    <aside>
-      <p>Content</p>
-    </aside>
-  );
+interface IContentProps {
+  children: React.ReactNode;
+}
+
+export const Content = ({ children }: IContentProps) => {
+  return <aside>{children}</aside>;
 };
