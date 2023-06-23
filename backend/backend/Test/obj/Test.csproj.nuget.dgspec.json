@@ -294,9 +294,6 @@
               "D:\\GIT\\allari-sse\\backend\\backend\\Domain\\Domain.csproj": {
                 "projectPath": "D:\\GIT\\allari-sse\\backend\\backend\\Domain\\Domain.csproj"
               },
-              "D:\\GIT\\allari-sse\\backend\\backend\\Infra\\Infra.csproj": {
-                "projectPath": "D:\\GIT\\allari-sse\\backend\\backend\\Infra\\Infra.csproj"
-              },
               "D:\\GIT\\allari-sse\\backend\\backend\\Service\\Service.csproj": {
                 "projectPath": "D:\\GIT\\allari-sse\\backend\\backend\\Service\\Service.csproj"
               }
@@ -313,6 +310,10 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "dependencies": {
+            "Microsoft.Extensions.Configuration.Json": {
+              "target": "Package",
+              "version": "[8.0.0-preview.5.23280.8, )"
+            },
             "Microsoft.NET.Test.Sdk": {
               "target": "Package",
               "version": "[16.11.0, )"

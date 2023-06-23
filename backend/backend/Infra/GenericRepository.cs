@@ -9,7 +9,7 @@ public class GenericRepository<TModel> where TModel: class, IMongoIdentity
     protected readonly IMongoCollection<TModel> DbSet;
     protected readonly IMongoDatabase Database;
 
-    public GenericRepository(DbContext context, string collectionName)
+    public GenericRepository(DbContext? context, string collectionName)
     {
         DbSet = context.Database!.GetCollection<TModel>(collectionName);
         Database = context.Database;
