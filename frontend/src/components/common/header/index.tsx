@@ -1,3 +1,13 @@
+import { Clock } from "@/components/clock";
+import "./index.css";
+
 export const Header = () => {
-  return <header></header>;
-}
+  return (
+    <header>
+      <div className="header-content">
+        <p>Header</p>
+        <Clock />
+      </div>
+    </header>
+  );
+};
