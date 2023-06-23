@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using Application.Services;
-using CrossCutting.Classes;
 using CrossCutting.DTOs.Image;
 using Domain.Models;
 using Infra;
@@ -84,5 +83,38 @@ public class ImageServiceTest
         
         Assert.NotNull(images);
         Assert.IsType<List<ImageDto>>(images);
+    }
+    
+    /// <summary>
+    /// Persist default images
+    /// </summary>
+    [Fact]
+    public async Task PersistDefaultImages()
+    {
+        var service = SetupAppService();
+        
+        var images = await service.GetAllImages();
+
+        if (images is { Count: > 0 }) return;
+
+        var imagesToPersist = new List<ImageDto>()
+        {
+            ImageDto,
+            ImageDto,
+            ImageDto,
+            ImageDto,
+            ImageDto,
+        };
+
+        foreach (var image in imagesToPersist)
+        {
+            var addedImage = await service.AddImage(image);
+            
+            Assert.NotNull(addedImage);
+        }
+
+        images = await service.GetAllImages();
+        
+        Assert.True(images.Count >= imagesToPersist.Count);
     }
 }
