@@ -12,6 +12,12 @@ public class ImageAppService: GenericAppService
     {
     }
 
+    /// <summary>
+    /// Get all images
+    /// </summary>
+    /// <returns>
+    ///     <see cref="List{ImageDto}"/>
+    /// </returns>
     public async Task<List<ImageDto>> GetAllImages()
     {
         var data = await Uow.ImageRepository!.GetAsync();
@@ -19,6 +25,15 @@ public class ImageAppService: GenericAppService
         return data.Select(x => new ImageDto(x.Id, x.Url, x.Name, x.ThumbnailUrl)).ToList();
     }
     
+    /// <summary>
+    /// Get image by id
+    /// </summary>
+    /// <param name="id">
+    ///     <see cref="string"/>
+    /// </param>
+    /// <returns>
+    ///     <see cref="ImageDto"/>
+    /// </returns>
     public async Task<ImageDto?> GetById(string id)
     {
         var data = await Uow.ImageRepository!.GetAsync(id);
@@ -27,6 +42,15 @@ public class ImageAppService: GenericAppService
     }
 
     
+    /// <summary>
+    /// Add image
+    /// </summary>
+    /// <param name="imageDto">
+    ///     <see cref="ImageDto"/>
+    /// </param>
+    /// <returns>
+    ///     <see cref="Image"/>
+    /// </returns>
     public async Task<Image?> AddImage(ImageDto imageDto)
     {
         var image = new Image
@@ -45,6 +69,13 @@ public class ImageAppService: GenericAppService
         return created;
     }
     
+    /// <summary>
+    /// Remove image
+    /// </summary>
+    /// <param name="id">
+    ///     <see cref="string"/>
+    /// </param>
+    /// <returns></returns>
     public async Task RemoveImage(string id)
     {
         await Uow.ImageRepository.RemoveAsync(id);

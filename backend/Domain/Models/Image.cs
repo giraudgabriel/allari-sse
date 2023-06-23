@@ -4,6 +4,9 @@ using MongoDB.Bson.Serialization.Attributes;
 
 namespace Domain.Models;
 
+/// <summary>
+/// Image
+/// </summary>
 public class Image : IMongoIdentity
 {
     [BsonRepresentation(BsonType.ObjectId)]

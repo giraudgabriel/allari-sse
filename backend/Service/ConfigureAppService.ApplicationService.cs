@@ -5,6 +5,10 @@ namespace Application
 {
     public class ConfigureAppService
     {
+        /// <summary>
+        /// Configure all services
+        /// </summary>
+        /// <param name="services"></param>
         public static void Configure(IServiceCollection services)
         {
             var assemblyToScan = Assembly.GetExecutingAssembly();

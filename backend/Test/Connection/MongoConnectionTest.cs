@@ -13,6 +13,9 @@ namespace Test.Connection;
 
 public class MongoConnectionTest
 {
+    /// <summary>
+    /// Validate if mongo connection is working
+    /// </summary>
     [Fact]
     public void TryGetMongoConnection()
     {

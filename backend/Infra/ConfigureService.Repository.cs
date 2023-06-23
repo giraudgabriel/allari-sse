@@ -5,6 +5,10 @@ namespace Infra
 {
     public class ConfigureServiceRepository
     {
+        /// <summary>
+        /// Configure all repositories
+        /// </summary>
+        /// <param name="services"></param>
         public static void Configure(IServiceCollection services)
         {
             var assemblyToScan = Assembly.GetExecutingAssembly();

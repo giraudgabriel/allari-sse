@@ -19,6 +19,10 @@ public class ImageServiceTest
 
     private static readonly ImageDto ImageDto = new(null, AllariLogoUrl, "Allari Logo", AllariLogoUrl);
 
+    /// <summary>
+    /// Setup app service
+    /// </summary>
+    /// <returns></returns>
     private static ImageAppService SetupAppService()
     {
         var context = DbFactory.Context;
@@ -35,6 +39,10 @@ public class ImageServiceTest
         return service;
     }
     
+    /// <summary>
+    /// Validate image create, search and delete
+    /// </summary>
+    /// <returns></returns>
     [Fact]
     public async Task ValidateImageCreateSearchDelete()
     {
@@ -63,6 +71,10 @@ public class ImageServiceTest
 
     }
     
+    /// <summary>
+    /// Validate image get all
+    /// </summary>
+    /// <returns></returns>
     [Fact]
     public async Task ValidateImagesGetAll()
     {
