@@ -17,6 +17,7 @@ button {
   padding: 8px 16px;
   border-radius: 4px;
   position: relative;
+  width: fit-content;
   overflow: hidden;
   transform: translate3d(0, 0, 0);
 }

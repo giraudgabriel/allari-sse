@@ -1,24 +1,28 @@
+import { Description, MainContentContainer } from "./styles";
+
 interface IMainContentProps {
+  title: string;
   description: string;
   children: React.ReactNode;
   onReadMoreClick: () => void;
 }
 
 export const MainContent = ({
+  title,
   description,
   onReadMoreClick,
   children,
 }: IMainContentProps) => {
   return (
-    <section>
-      <h2>Description</h2>
-      <p>{description}</p>
+    <MainContentContainer>
+      <h2>{title}</h2>
+      <Description>{description}</Description>
 
       <button onClick={onReadMoreClick}>
         <i className="fas fa-arrow-right"></i> Read More
       </button>
 
       {children}
-    </section>
+    </MainContentContainer>
   );
 };

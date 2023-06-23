@@ -3,6 +3,7 @@ import { Footer } from "@/components/common/footer";
 import { Header } from "@/components/common/header";
 import { MainContent } from "@/components/common/main-content";
 import { ImageSlider } from "@/components/image-slider";
+import { MousePosition } from "@/components/mouse-position";
 import { Developer } from "@/config/developer";
 import { useEffect, useState } from "react";
 
@@ -43,10 +44,11 @@ const Home = () => {
       <Header />
       <main>
         <Content>
-          #TODO 
+          <MousePosition />
         </Content>
         <MainContent
-          description={Developer.projectDescription}
+          title={Developer.project.title}
+          description={Developer.project.description}
           onReadMoreClick={fetchItems}
         >
           {todos.map((todo) => (
