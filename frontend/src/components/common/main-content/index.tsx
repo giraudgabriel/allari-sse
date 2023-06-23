@@ -14,7 +14,7 @@ export const MainContent = ({
       <h2>Description</h2>
       <p>{description}</p>
 
-      <button onClick={onReadMoreClick} className="ripple">
+      <button onClick={onReadMoreClick}>
         <i className="fas fa-arrow-right"></i> Read More
       </button>
 

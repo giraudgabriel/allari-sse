@@ -1,6 +1,11 @@
 import { useCallback, useEffect, useState } from "react";
-
-import "./index.css";
+import {
+  ArrowsContainer,
+  SliderButton,
+  SliderContainer,
+  SliderFooter,
+  SliderImageContainer,
+} from "./styles";
 
 interface IImageSliderProps {
   images: string[];
@@ -45,34 +50,35 @@ export const ImageSlider = ({
     }
   }, [autoPlay, autoPlayInterval, currentImageIndex, handleNextImage]);
 
+
+  const selectedImage = images[currentImageIndex];
+
   return (
-    <div className="slider-container">
-      <div className="slider-image-container">
-        <img src={images[currentImageIndex]} alt="slider" />
+    <SliderContainer>
+      <SliderImageContainer>
+        <img src={selectedImage} alt="slider" />
         {showArrows && (
-          <div className="slider-arrow-container">
-            <button className="slider-button" onClick={handlePreviousImage}>
+          <ArrowsContainer>
+            <SliderButton onClick={handlePreviousImage}>
               <i className="fas fa-chevron-left"></i>
-            </button>
-            <button className="slider-button" onClick={handleNextImage}>
+            </SliderButton>
+            <SliderButton onClick={handleNextImage}>
               <i className="fas fa-chevron-right"></i>
-            </button>
-          </div>
+            </SliderButton>
+          </ArrowsContainer>
         )}
-      </div>
+      </SliderImageContainer>
       {showFooterNavigation && (
-        <div className="slider-footer">
+        <SliderFooter>
           {images.map((image, index) => (
-            <button
+            <SliderButton
               key={index}
-              className={`slider-button ${
-                index === currentImageIndex ? "active" : ""
-              }`}
+              active={image === selectedImage}
               onClick={() => setCurrentImageIndex(index)}
-            ></button>
+            ></SliderButton>
           ))}
-        </div>
+        </SliderFooter>
       )}
-    </div>
+    </SliderContainer>
   );
 };

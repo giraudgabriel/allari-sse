@@ -2,7 +2,6 @@ import { Content } from "@/components/common/content";
 import { Footer } from "@/components/common/footer";
 import { Header } from "@/components/common/header";
 import { MainContent } from "@/components/common/main-content";
-import { NavigationMenu } from "@/components/common/navigation-menu";
 import { ImageSlider } from "@/components/image-slider";
 import { Developer } from "@/config/developer";
 import { useEffect, useState } from "react";

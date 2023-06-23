@@ -1,13 +1,24 @@
+import { createGlobalStyle } from 'styled-components';
+
+export const GlobalStyles = createGlobalStyle`
 * {
-  font-family: "Roboto", sans-serif;
+  user-select: none;
+  font-family: 'Roboto', sans-serif;
+  margin: 0;
+  box-sizing: border-box;
+  outline: none;
 }
+
 
 button {
   cursor: pointer;
   outline: none;
   border: none;
   padding: 8px 16px;
-  border-radius: 4px
+  border-radius: 4px;
+  position: relative;
+  overflow: hidden;
+  transform: translate3d(0, 0, 0);
 }
 
 button:disabled {
@@ -24,13 +35,7 @@ button:hover {
 }
 
 
-.ripple {
-  position: relative;
-  overflow: hidden;
-  transform: translate3d(0, 0, 0);
-}
-
-.ripple:after {
+button:after {
   content: "";
   display: block;
   position: absolute;
@@ -47,7 +52,7 @@ button:hover {
   transition: transform 0.5s, opacity 1s;
 }
 
-.ripple:active:after {
+button:active:after {
   transform: scale(0, 0);
   opacity: 0.2;
   transition: 0s;
@@ -56,11 +61,10 @@ button:hover {
 main {
   display: flex;
   flex-direction: row;
-  align-items: center;
-  justify-content: center;
   width: 100%;
+  height: 100%;
   overflow: auto;
-  margin-top: 6rem;
+  min-height: 40rem;
 }
 
 @media (max-width: 768px) {
@@ -68,3 +72,4 @@ main {
     flex-direction: column;
   }
 }
+`;

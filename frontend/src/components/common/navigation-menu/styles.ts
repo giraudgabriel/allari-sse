@@ -1,4 +1,6 @@
-nav {
+import styled from "styled-components";
+
+export const NavContainer = styled.nav`
   background-color: #333;
   color: #fff;
   display: flex;
@@ -7,6 +9,4 @@ nav {
   border: 1px solid #333;
   padding: 1rem;
   width: 100%;
-  position: fixed;
-  top: 4rem;
-}
+`;

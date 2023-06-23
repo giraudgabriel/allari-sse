@@ -1,5 +1,5 @@
 import { useClock } from "@/hooks/useClock";
-import "./index.css";
+import { ClockContainer } from "./styles";
 
 export const Clock = () => {
   const clock = useClock();
@@ -7,10 +7,5 @@ export const Clock = () => {
   //formatted time
   const formattedTime = clock.toLocaleTimeString();
 
-return (
-    <div className="clock-container">
-        {formattedTime}
-    </div>
-  );
-
+  return <ClockContainer>{formattedTime}</ClockContainer>;
 };

@@ -1,16 +1,16 @@
 import { Clock } from "@/components/clock";
-import "./index.css";
 import { Developer } from "@/config/developer";
 import { NavigationMenu } from "../navigation-menu";
+import { HeaderContainer, HeaderContent } from "./styles";
 
 export const Header = () => {
   return (
-    <header>
-      <div className="header-content">
+    <HeaderContainer>
+      <HeaderContent>
         <p>Header</p>
         <Clock />
-      </div>
+      </HeaderContent>
       <NavigationMenu name={Developer.name} />
-    </header>
+    </HeaderContainer>
   );
 };

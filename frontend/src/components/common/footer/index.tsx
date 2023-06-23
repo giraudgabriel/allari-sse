@@ -1,10 +1,11 @@
-import './index.css'
+import { FooterContainer } from "./styles";
 
 export const Footer = () => {
-  return <footer>
-     <a href='https://allari.com' target='_blank'>
+  return (
+    <FooterContainer>
+      <a href="https://allari.com" target="_blank">
         Allari's Website
-     </a>
-
-  </footer>
-}
+      </a>
+    </FooterContainer>
+  );
+};

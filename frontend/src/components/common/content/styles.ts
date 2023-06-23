@@ -1,14 +1,15 @@
-aside {
+import { styled } from 'styled-components';
+
+export const ContentContainer = styled.aside`
   width: 100%;
   min-width: 10rem;
   height: 100%;
   min-height: 20rem;
-  background-color: #f0f0f0;
-  border-right: 1px solid #eaeaea;
   box-sizing: border-box;
-  margin: 8px;
+  margin: 0 8px;
+  padding: 8px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-}
+  `;

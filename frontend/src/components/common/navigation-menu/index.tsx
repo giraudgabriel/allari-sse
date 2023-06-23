@@ -1,9 +1,9 @@
-import "./index.css";
+import { NavContainer } from "./styles";
 
 interface INavigationMenuProps {
   name: string;
 }
 
 export const NavigationMenu = ({ name }: INavigationMenuProps) => {
-  return <nav>{name}</nav>;
+  return <NavContainer>{name}</NavContainer>;
 };
