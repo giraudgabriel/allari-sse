@@ -67,3 +67,8 @@
     - The project is divided into two folders, frontend and backend.
     - The frontend folder contains the web application developed in React.js.
     - The backend folder contains the API developed in .NET Core 6.
+
+
+> # Final Considerations
+- I didn't developed a pretty frontend (with a better UX/UI), because I focused on the code quality (backend and frontend) and the tests.
+- I've tried to follow the PDF instructions, most of the time.
