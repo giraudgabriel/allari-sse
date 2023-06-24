@@ -13,6 +13,7 @@ interface IImageSliderProps {
   autoPlayInterval?: number;
   showArrows?: boolean;
   showFooterNavigation?: boolean;
+  loading?: boolean;
 }
 export const ImageSlider = ({
   images,
@@ -20,6 +21,7 @@ export const ImageSlider = ({
   autoPlayInterval = 3000,
   showArrows = true,
   showFooterNavigation = true,
+  loading = false,
 }: IImageSliderProps) => {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
@@ -50,13 +52,13 @@ export const ImageSlider = ({
     }
   }, [autoPlay, autoPlayInterval, currentImageIndex, handleNextImage]);
 
-
-  const selectedImage = images[currentImageIndex];
+  const selectedImage = images.length > 0 ? images[currentImageIndex] : "";
 
   return (
     <SliderContainer>
       <SliderImageContainer>
-        <img src={selectedImage} alt="slider" />
+        {loading && <p>Loading...</p>}
+        {!loading && <img src={selectedImage} alt="slider" />}
         {showArrows && (
           <ArrowsContainer>
             <SliderButton onClick={handlePreviousImage}>

@@ -20,6 +20,7 @@ export const SliderImageContainer = styled.div`
   flex-direction: row;
   width: 100%;
   height: 100%;
+  min-height: 10rem;
   justify-content: center;
   align-items: center;
   
