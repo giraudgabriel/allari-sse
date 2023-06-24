@@ -72,3 +72,7 @@
 > # Final Considerations
 - I didn't developed a pretty frontend (with a better UX/UI), because I focused on the code quality (backend and frontend) and the tests.
 - I've tried to follow the PDF instructions, most of the time.
+
+># Project Demo
+
+![Allari](allari-web.gif)
