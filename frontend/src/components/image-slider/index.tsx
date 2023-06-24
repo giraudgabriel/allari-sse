@@ -61,10 +61,13 @@ export const ImageSlider = ({
         {!loading && <img src={selectedImage} alt="slider" />}
         {showArrows && (
           <ArrowsContainer>
-            <SliderButton onClick={handlePreviousImage}>
+            <SliderButton
+              background={"#f0f0f0"}
+              onClick={handlePreviousImage}
+            >
               <i className="fas fa-chevron-left"></i>
             </SliderButton>
-            <SliderButton onClick={handleNextImage}>
+            <SliderButton background={"#f0f0f0"} onClick={handleNextImage}>
               <i className="fas fa-chevron-right"></i>
             </SliderButton>
           </ArrowsContainer>

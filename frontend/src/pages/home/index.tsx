@@ -7,17 +7,15 @@ import { ImageSlider } from "@/components/image-slider";
 import { MousePosition } from "@/components/mouse-position";
 import { Developer } from "@/config/developer";
 import imageService, { IImage } from "@/services/image.service";
-import { useState } from "react";
 import { useQuery } from "react-query";
 
 const Home = () => {
-
   const fetchImages = async () => {
     const images = await imageService.getAll();
     return images;
   };
 
-  const { data, isLoading } = useQuery<IImage[]>({
+  const { data, isLoading, isError } = useQuery<IImage[]>({
     queryKey: "images",
     queryFn: fetchImages,
     cacheTime: 1000 * 30, // 30 seconds
@@ -34,16 +32,20 @@ const Home = () => {
           title={Developer.project.title}
           description={Developer.project.description}
         >
+          {isError && <p>Failed to fetch data from API</p>}
           {data && <ImageContainer images={data ?? []} loading={isLoading} />}
         </MainContent>
         <Content>
-          <ImageSlider
-            images={data ? data.map((image) => image.Url) : []}
-            autoPlay={false}
-            showArrows
-            showFooterNavigation
-            loading={isLoading}
-          />
+          {isError && <p>Failed to fetch data from API</p>}
+          {!isError && (
+            <ImageSlider
+              images={data ? data.map((image) => image.Url) : []}
+              autoPlay={false}
+              showArrows
+              showFooterNavigation
+              loading={isLoading}
+            />
+          )}
         </Content>
       </main>
       <Footer />

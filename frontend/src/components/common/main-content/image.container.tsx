@@ -12,8 +12,7 @@ export const ImageContainer = ({ images, loading }: ImageContainerProps) => {
   return (
     <Images>
       {images.map((image) => (
-        <ImageContent key={image.Hash}>
-          <h1>{image.Name}</h1>
+        <ImageContent key={image.Hash} title={image.Name}>
           <img src={image.Url} alt={image.Name} />
         </ImageContent>
       ))}

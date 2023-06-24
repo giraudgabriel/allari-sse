@@ -43,17 +43,19 @@ export const ArrowsContainer = styled.div`
 
 interface ISliderButton {
   active?: boolean;
+  background?: string;
 }
 
 export const SliderButton = styled.button<ISliderButton>`
   transition: 0.2s;
-  background-color: rgba(0, 0, 0, 0.2);
+  background-color: ${({ background }) => background ? background : "rgba(0, 0, 0, 0.2)"} ;
   margin: 0.2rem;
   border-radius: 50%;
   width: 1.5rem;
   height: 1.5rem;
   font-size: 0.7rem;
   padding: 0;
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
 
   ${({ active }) => active && `background-color: rgba(0, 0, 0, 0.5);`}
   `;

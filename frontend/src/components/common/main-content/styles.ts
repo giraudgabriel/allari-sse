@@ -59,6 +59,7 @@ export const ImageContent = styled.div`
     object-fit: cover;
     object-position: center;
     text-align: center;
+    border-radius: 4px;
   }
 
   &:hover {
