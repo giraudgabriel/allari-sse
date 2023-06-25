@@ -27,5 +27,5 @@ export const Developer = {
     title,
     description
   },
-  url: "github.com/giraudgabriel"
+  url: "https://github.com/giraudgabriel"
 }

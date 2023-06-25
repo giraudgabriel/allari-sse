@@ -13,7 +13,7 @@ export const NavigationMenu = ({ routes }: INavigationMenuProps) => {
     <NavContainer>
       <i className="fa fa-bars menu-icon" />
       {routes.map((route) => (
-        <a key={route.name} href={route.url}>
+        <a key={route.name} href={route.url} target="_blank">
           {" "}
           <i className={route.icon} /> {route.name}{" "}
         </a>
