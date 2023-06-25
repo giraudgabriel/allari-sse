@@ -75,4 +75,4 @@
 
 ># Project Demo
 
-![Allari](allari-web.gif)
+![Allari](allari-final.gif)
