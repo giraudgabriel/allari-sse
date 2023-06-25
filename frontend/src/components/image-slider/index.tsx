@@ -61,10 +61,7 @@ export const ImageSlider = ({
         {!loading && <img src={selectedImage} alt="slider" />}
         {showArrows && (
           <ArrowsContainer>
-            <SliderButton
-              background={"#f0f0f0"}
-              onClick={handlePreviousImage}
-            >
+            <SliderButton background={"#f0f0f0"} onClick={handlePreviousImage}>
               <i className="fas fa-chevron-left"></i>
             </SliderButton>
             <SliderButton background={"#f0f0f0"} onClick={handleNextImage}>
@@ -72,18 +69,18 @@ export const ImageSlider = ({
             </SliderButton>
           </ArrowsContainer>
         )}
+        {showFooterNavigation && (
+          <SliderFooter>
+            {images.map((image, index) => (
+              <SliderButton
+                key={index}
+                active={image === selectedImage}
+                onClick={() => setCurrentImageIndex(index)}
+              ></SliderButton>
+            ))}
+          </SliderFooter>
+        )}
       </SliderImageContainer>
-      {showFooterNavigation && (
-        <SliderFooter>
-          {images.map((image, index) => (
-            <SliderButton
-              key={index}
-              active={image === selectedImage}
-              onClick={() => setCurrentImageIndex(index)}
-            ></SliderButton>
-          ))}
-        </SliderFooter>
-      )}
     </SliderContainer>
   );
 };

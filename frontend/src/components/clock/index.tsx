@@ -7,5 +7,9 @@ export const Clock = () => {
   //formatted time
   const formattedTime = clock.toLocaleTimeString();
 
-  return <ClockContainer>{formattedTime}</ClockContainer>;
+  return (
+    <ClockContainer>
+      <i className="fa fa-clock" /> {formattedTime}
+    </ClockContainer>
+  );
 };

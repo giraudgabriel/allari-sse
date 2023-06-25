@@ -40,7 +40,8 @@ const Home = () => {
           {!isError && (
             <ImageSlider
               images={data ? data.map((image) => image.Url) : []}
-              autoPlay={false}
+              autoPlay
+              autoPlayInterval={5000}
               showArrows
               showFooterNavigation
               loading={isLoading}

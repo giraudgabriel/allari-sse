@@ -4,6 +4,8 @@ export const SliderContainer = styled.div`
   position: relative;
   width: 100%;
   height: 100%;
+  min-height: 15rem;
+  max-height: 15rem;
   overflow: hidden;
   border-radius: 5px;
   box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
@@ -29,6 +31,9 @@ export const SliderImageContainer = styled.div`
     height: 100%;
     object-fit: cover;
     object-position: center;
+    animation: fadein 0.5s ease-in-out;
+
+    transition: transform 0.5s ease-in-out;
   }  
 `;
 
@@ -61,6 +66,9 @@ export const SliderButton = styled.button<ISliderButton>`
   `;
 
 export const SliderFooter = styled.div`
+    position: absolute;
+    bottom: 0;
+    width: 100%;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;

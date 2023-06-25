@@ -7,6 +7,26 @@ export const GlobalStyles = createGlobalStyle`
   margin: 0;
   box-sizing: border-box;
   outline: none;
+  animation: fadein 0.3s ease-in-out;
+}
+
+body {
+  background-color: #f5f5f5;
+  color: #333;
+  font-size: 1rem;
+  line-height: 1.5rem;
+  font-weight: 400;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+@keyframes fadein {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
 
 
@@ -20,6 +40,22 @@ button {
   width: fit-content;
   overflow: hidden;
   transform: translate3d(0, 0, 0);
+  animation: fadein 0.5s;
+
+  
+}
+
+.info {
+  background-color: #2196f3;
+  color: #fff;
+
+  &:hover {
+    background-color: #1976d2;
+  }
+
+  &:disabled {
+    background-color: #9e9e9e;
+  }
 }
 
 button:disabled {
@@ -66,6 +102,7 @@ main {
   height: 100%;
   overflow: auto;
   min-height: 40rem;
+  animation: fadein 0.5s;
 }
 
 @media (max-width: 768px) {

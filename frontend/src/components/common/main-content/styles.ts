@@ -6,8 +6,13 @@ export const MainContentContainer = styled.section`
   height: 100%;
   width: 100%;
   padding: 1rem;
+  background-color: #f5f5f5;
+  border-radius: 5px;
+  margin: 0.5rem 0;
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
+
   & > * {
-    margin: 1rem 0;
+    margin: 0.5rem 0;
   }
 `;
 
@@ -46,6 +51,10 @@ export const ImageContent = styled.div`
   overflow: hidden;
   box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.1), 0 2px 4px rgba(0, 0, 0, 0.1);
 
+  .image-content {
+    display: none;
+  }
+
   h1 {
     font-size: 1.5rem;
     margin: 0;
@@ -53,18 +62,28 @@ export const ImageContent = styled.div`
   }
 
   img {
-    margin: 8px 0;
-    width: 15rem;    
+    width: 100%;
     max-height: 15rem;
     object-fit: cover;
     object-position: center;
     text-align: center;
+    margin: 8px 0;
     border-radius: 4px;
   }
 
   &:hover {
     transform: scale(1.05);
-    transition: transform 0.5s;
+    transition: transform 0.2s;
+
+    .image-content {
+      display: block;
+      transition: display 0.2s;
+    }
+
+    img {
+      display: none !important;
+      transition: display 0.5s;
+    }
   }
 
   &:hover img {
