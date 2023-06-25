@@ -7,10 +7,14 @@ export const Header = () => {
   return (
     <HeaderContainer>
       <HeaderContent>
-        <p>Header</p>
+        <h2>Allari Images</h2>
         <Clock />
       </HeaderContent>
-      <NavigationMenu name={Developer.name} />
+      <NavigationMenu routes={[{
+        name: Developer.name,
+        url: Developer.url,
+        icon: "fa fa-user"
+      }]} />
     </HeaderContainer>
   );
 };

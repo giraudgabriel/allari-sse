@@ -13,11 +13,7 @@ const description = `
   - ReactJS (TypeScript)
   - MongoDB (NoSQL Database)
 
-  The frontend was made based on the pdf file provided by SSE.
-
-  The backend was made based on my knowledge of .NET Core and the requirements of the frontend.
-
-  I have also added some things to code like:
+  I have also added some extra features to the project, such as:
   - DTOs (Data Transfer Objects)
   - Dependency Injection
   - Unit Tests
@@ -30,5 +26,6 @@ export const Developer = {
   project: {
     title,
     description
-  }
+  },
+  url: "github.com/giraudgabriel"
 }

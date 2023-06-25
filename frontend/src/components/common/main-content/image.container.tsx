@@ -10,10 +10,11 @@ export const ImageContainer = ({ images, loading }: ImageContainerProps) => {
   if (loading) return <p>Loading...</p>;
 
   return (
-    <Images>
+    <Images id="images">
       {images.map((image) => (
         <ImageContent key={image.Hash} title={image.Name}>
           <img src={image.Url} alt={image.Name} />
+          <h1 className="image-content">{image.Name}</h1>
         </ImageContent>
       ))}
     </Images>

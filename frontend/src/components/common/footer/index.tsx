@@ -4,7 +4,7 @@ export const Footer = () => {
   return (
     <FooterContainer>
       <a href="https://allari.com" target="_blank">
-        Allari's Website
+        <i className="fa fa-city" /> Allari's Website
       </a>
     </FooterContainer>
   );

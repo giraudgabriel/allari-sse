@@ -15,7 +15,9 @@ export const Position = styled.p`
   font-weight: 600;
   margin: 8px 0;
   padding: 8px;
-  background-color: #f5f5f5;
+  background-color: #f2f2f2;
+  border: 1px solid #e5e5e5;
   border-radius: 4px;
   text-align: center;
+  animation: fadein 0.5s ease-in-out;
 `;

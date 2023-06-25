@@ -30,13 +30,13 @@ describe("<MainContent />", () => {
     // Get Read More button using the DOM API
     const readMore = wrapper.container.querySelector("button");
     expect(readMore).toBeTruthy();
-    expect(readMore?.textContent?.trim()).toBe("Read More");
+    expect(readMore?.textContent?.trim()).toBe("See More");
 
     // Click Read More button
     readMore?.click();
 
     // Get Read Less button using the DOM API
-    const readLess = screen.findByText("Read Less");
+    const readLess = screen.findByText("See Less");
     expect(readLess).toBeTruthy();
   });
   
